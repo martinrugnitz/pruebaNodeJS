@@ -1,1 +1,4 @@
-[]
+[
+    "{\"email\":\"john@doegmail.com\",\"password\":\"$2b$10$NTITeJ0uYh73mo.M2ChqDOsOZDitF4kTyxHf19HN62IAMNtxDjxOq\",\"firstName\":\"John\",\"lastName\":\"Doe\"}",
+    "{\"email\":\"johndoe@gmail.com\",\"password\":\"$2b$10$n0Bf8Uz4I1u1prwRHc712OO4ynCOtpz0EtOUyyE5WY2ylHsE32hzm\",\"firstName\":\"John\",\"lastName\":\"Doe\"}"
+]

@@ -1,4 +1,5 @@
 const Joi = require('joi');
+const findUser = require('../repositories/usersRepository').findUser
 
 const schema = Joi.object({
     email: Joi.string().email().required(),
@@ -7,7 +8,6 @@ const schema = Joi.object({
     password: Joi.string().min(8).required(),
 });
 
-const findUser = require('../findUser')
 
 module.exports = function userFormValidator  (req, res, next) {
     const result = schema.validate(req.body)

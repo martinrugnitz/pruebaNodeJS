@@ -1,1 +1,4 @@
-[]
+[
+    "{\"email\":\"john@doegmail.com\",\"favorites\":[]}",
+    "{\"email\":\"johndoe@gmail.com\",\"favorites\":[{\"movie_id\":533535,\"addedAt\":\"6/9/2024\"},{\"movie_id\":558144,\"addedAt\":\"6/9/2024\"}]}"
+]

@@ -1,1 +1,5 @@
-[]
+[
+    {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kb2VAZ21haWwuY29tIiwiaWF0IjoxNzI1NjQzNzU4fQ.cbbe4yoM7gLUNVe4Cg8gf5MEnrJCojGKSFzS1SUFI_g"
+    }
+]
