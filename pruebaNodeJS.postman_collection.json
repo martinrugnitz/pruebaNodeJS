@@ -1,0 +1,1294 @@
+{
+	"info": {
+		"_postman_id": "7b047706-f186-4822-b0ad-3bf92d6ad6ad",
+		"name": "pruebaNodeJS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18751869"
+	},
+	"item": [
+		{
+			"name": "/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"email\":\"johndoe@gmail.com\",\r\n   \"firstName\":\"John\",\r\n   \"lastName\":\"Doe\",\r\n   \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unvalid email",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\":\"johndoegmail.com\",\r\n   \"firstName\":\"John\",\r\n   \"lastName\":\"Doe\",\r\n   \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2d-tzX814iOjKIHWXikzWIVPwKQo0U\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 16:19:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"\\\"email\\\" must be a valid email\"\n}"
+				},
+				{
+					"name": "Empty attribute",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\":\"john@doegmail.com\",\r\n   \"firstName\":\"\",\r\n   \"lastName\":\"Doe\",\r\n   \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "54"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"36-n6a7SjbIzQ0xh2NZHYIdPxX5pl4\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 16:21:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"\\\"firstName\\\" is not allowed to be empty\"\n}"
+				},
+				{
+					"name": "Incorrect password length",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\":\"john@doegmail.com\",\r\n   \"firstName\":\"John\",\r\n   \"lastName\":\"Doe\",\r\n   \"password\":\"pa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"44-M1rzjbtrmnXO1wlP811Fj9qEams\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 16:21:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"\\\"password\\\" length must be at least 8 characters long\"\n}"
+				},
+				{
+					"name": "Successful user creation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\":\"johndoe@gmail.com\",\r\n   \"firstName\":\"John\",\r\n   \"lastName\":\"Doe\",\r\n   \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "12"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c-4VmhvoV3D5N5n+ODRiUzQvjg3TE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 16:25:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "User created"
+				},
+				{
+					"name": "Repeated Email",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"email\":\"john@doegmail.com\",\r\n   \"firstName\":\"John\",\r\n   \"lastName\":\"Doe\",\r\n   \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22-7E/nw4NTj1wudq/7GNEsO0zIZHQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 16:23:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Email already in use\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/users/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"jondoe@gmail.com\",\r\n    \"password\" : \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User not found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jondoe@gmail.com\",\r\n    \"password\" : \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "14"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e-AeuUaVSDFyr5HsjCcV+fKNkZtqs\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 16:24:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "User not found"
+				},
+				{
+					"name": "Succesful Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"johndoe@gmail.com\",\r\n    \"password\" : \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "155"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9b-yrXIIPT7fn9WFUwtiECxJM3pRj4\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 17:29:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kb2VAZ21haWwuY29tIiwiaWF0IjoxNzI1NjQzNzU4fQ.cbbe4yoM7gLUNVe4Cg8gf5MEnrJCojGKSFzS1SUFI_g\"}"
+				}
+			]
+		},
+		{
+			"name": "/users/logout",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"logout"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Succesful logout",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"logout"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "10"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a-Je36IghZfk2t74VQz0YpTWUxYFU\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 18:26:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Logged out"
+				},
+				{
+					"name": "Token was logged out message",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"logout"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"15-ULY80YApFi7MN62mWSpHG+bzZi8\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 18:27:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Token was logged out."
+				}
+			]
+		},
+		{
+			"name": "/movies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unauthorized access",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14-fZxStrVrV0eJrF/UxN4ZRwdDtKU\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 16:17:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Unauthorized access."
+				},
+				{
+					"name": "Succesful movies get",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "12687"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"318f-jIPc0rOY3iBfqtMuKzXbrORFkcc\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 17:50:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/vWqfMXAjmyKKXDes4PX6NIbYbDS.jpg\",\n        \"genre_ids\": [\n            80,\n            27,\n            53\n        ],\n        \"id\": 1226578,\n        \"original_language\": \"en\",\n        \"original_title\": \"Longlegs\",\n        \"overview\": \"FBI Agent Lee Harker is assigned to an unsolved serial killer case that takes an unexpected turn, revealing evidence of the occult. Harker discovers a personal connection to the killer and must stop him before he strikes again.\",\n        \"popularity\": 743.805,\n        \"poster_path\": \"/5aj8vVGFwGVbQQs26ywhg4Zxk2L.jpg\",\n        \"release_date\": \"2024-07-10\",\n        \"title\": \"Longlegs\",\n        \"video\": false,\n        \"vote_average\": 6.703,\n        \"vote_count\": 687,\n        \"suggestionScore\": 98\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/yDHYTfA3R0jFYba16jBB1ef8oIt.jpg\",\n        \"genre_ids\": [\n            28,\n            35,\n            878\n        ],\n        \"id\": 533535,\n        \"original_language\": \"en\",\n        \"original_title\": \"Deadpool & Wolverine\",\n        \"overview\": \"A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.\",\n        \"popularity\": 3094.232,\n        \"poster_path\": \"/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg\",\n        \"release_date\": \"2024-07-24\",\n        \"title\": \"Deadpool & Wolverine\",\n        \"video\": false,\n        \"vote_average\": 7.751,\n        \"vote_count\": 2647,\n        \"suggestionScore\": 96\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/p5kpFS0P3lIwzwzHBOULQovNWyj.jpg\",\n        \"genre_ids\": [\n            80,\n            53\n        ],\n        \"id\": 1032823,\n        \"original_language\": \"en\",\n        \"original_title\": \"Trap\",\n        \"overview\": \"A father and teen daughter attend a pop concert, where they realize they're at the center of a dark and sinister event.\",\n        \"popularity\": 1166.02,\n        \"poster_path\": \"/jwoaKYVqPgYemFpaANL941EF94R.jpg\",\n        \"release_date\": \"2024-07-31\",\n        \"title\": \"Trap\",\n        \"video\": false,\n        \"vote_average\": 6.54,\n        \"vote_count\": 792,\n        \"suggestionScore\": 95\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/7aPrv2HFssWcOtpig5G3HEVk3uS.jpg\",\n        \"genre_ids\": [\n            28,\n            12,\n            53\n        ],\n        \"id\": 718821,\n        \"original_language\": \"en\",\n        \"original_title\": \"Twisters\",\n        \"overview\": \"As storm season intensifies, the paths of former storm chaser Kate Carter and reckless social-media superstar Tyler Owens collide when terrifying phenomena never seen before are unleashed. The pair and their competing teams find themselves squarely in the paths of multiple storm systems converging over central Oklahoma in the fight of their lives.\",\n        \"popularity\": 1050.614,\n        \"poster_path\": \"/pjnD08FlMAIXsfOLKQbvmO0f0MD.jpg\",\n        \"release_date\": \"2024-07-10\",\n        \"title\": \"Twisters\",\n        \"video\": false,\n        \"vote_average\": 7.021,\n        \"vote_count\": 1248,\n        \"suggestionScore\": 88\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/6PnnfODvQfEIAdJ5PbqYMXKdfwX.jpg\",\n        \"genre_ids\": [\n            28,\n            878,\n            35,\n            12,\n            53\n        ],\n        \"id\": 365177,\n        \"original_language\": \"en\",\n        \"original_title\": \"Borderlands\",\n        \"overview\": \"Returning to her home planet, an infamous bounty hunter forms an unexpected alliance with a team of unlikely heroes. Together, they battle monsters and dangerous bandits to protect a young girl who holds the key to unimaginable power.\",\n        \"popularity\": 1463.361,\n        \"poster_path\": \"/865DntZzOdX6rLMd405R0nFkLmL.jpg\",\n        \"release_date\": \"2024-08-07\",\n        \"title\": \"Borderlands\",\n        \"video\": false,\n        \"vote_average\": 5.666,\n        \"vote_count\": 334,\n        \"suggestionScore\": 86\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/bxwKC4qAbceMgHU1xCCTBK1eYdn.jpg\",\n        \"genre_ids\": [\n            28,\n            53,\n            80\n        ],\n        \"id\": 5492,\n        \"original_language\": \"en\",\n        \"original_title\": \"Gunner\",\n        \"overview\": \"While on a camping trip in order to reconnect, war veteran Colonel Lee Gunner must save his two sons from a gang of violent bikers when they're kidnapped after accidentally stumbling upon to a massive drug operation.\",\n        \"popularity\": 804.564,\n        \"poster_path\": \"/eEkAY5veAnwxUOOlpF62KawkFO9.jpg\",\n        \"release_date\": \"2024-08-16\",\n        \"title\": \"Gunner\",\n        \"video\": false,\n        \"vote_average\": 5.2,\n        \"vote_count\": 57,\n        \"suggestionScore\": 86\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/3q01ACG0MWm0DekhvkPFCXyPZSu.jpg\",\n        \"genre_ids\": [\n            28,\n            80,\n            53,\n            35\n        ],\n        \"id\": 573435,\n        \"original_language\": \"en\",\n        \"original_title\": \"Bad Boys: Ride or Die\",\n        \"overview\": \"After their late former Captain is framed, Lowrey and Burnett try to clear his name, only to end up on the run themselves.\",\n        \"popularity\": 1158.792,\n        \"poster_path\": \"/oGythE98MYleE6mZlGs5oBGkux1.jpg\",\n        \"release_date\": \"2024-06-05\",\n        \"title\": \"Bad Boys: Ride or Die\",\n        \"video\": false,\n        \"vote_average\": 7.566,\n        \"vote_count\": 1817,\n        \"suggestionScore\": 82\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/9BQqngPfwpeAfK7c2H3cwIFWIVR.jpg\",\n        \"genre_ids\": [\n            10749,\n            18\n        ],\n        \"id\": 1079091,\n        \"original_language\": \"en\",\n        \"original_title\": \"It Ends with Us\",\n        \"overview\": \"When a woman's first love suddenly reenters her life, her relationship with a charming, but abusive neurosurgeon is upended, and she realizes she must learn to rely on her own strength to make an impossible choice for her future.\",\n        \"popularity\": 769.307,\n        \"poster_path\": \"/4TzwDWpLmb9bWJjlN3iBUdvgarw.jpg\",\n        \"release_date\": \"2024-08-07\",\n        \"title\": \"It Ends with Us\",\n        \"video\": false,\n        \"vote_average\": 6.85,\n        \"vote_count\": 250,\n        \"suggestionScore\": 79\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/kwzNUM4yZ26XuNAPSyaWwJeWRP4.jpg\",\n        \"genre_ids\": [\n            28,\n            35,\n            14\n        ],\n        \"id\": 950526,\n        \"original_language\": \"pt\",\n        \"original_title\": \"O Mestre da Fumaça\",\n        \"overview\": \"The journey of Gabriel and Daniel, two brothers cursed by the Chinese mafia with its feared Three Generations Revenge, who have already reaped the life of their grandfather and their father. To survive, one of the brothers must learn the Smoke Style secrets, a little known Cannabis martial art, taught by a single master, high up in the mountains.\",\n        \"popularity\": 819.499,\n        \"poster_path\": \"/mg6YkwftQOJjpT2ygYlCi11LWeC.jpg\",\n        \"release_date\": \"2023-05-18\",\n        \"title\": \"The Smoke Master\",\n        \"video\": false,\n        \"vote_average\": 7.667,\n        \"vote_count\": 3,\n        \"suggestionScore\": 76\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/okVLmXL5y18dfN2R4ufMZEGaeCd.jpg\",\n        \"genre_ids\": [\n            28,\n            80\n        ],\n        \"id\": 1160018,\n        \"original_language\": \"hi\",\n        \"original_title\": \"Kill\",\n        \"overview\": \"When an army commando finds out his true love is engaged against her will, he boards a New Dehli-bound train in a daring quest to derail the arranged marriage. But when a gang of knife-wielding thieves begin to terrorize innocent passengers on his train, the commando takes them on himself in a death-defying kill-spree to save those around him — turning what should have been a typical commute into an adrenaline-fueled thrill ride.\",\n        \"popularity\": 812.635,\n        \"poster_path\": \"/m2zXTuNPkywdYLyWlVyJZW2QOJH.jpg\",\n        \"release_date\": \"2024-07-03\",\n        \"title\": \"Kill\",\n        \"video\": false,\n        \"vote_average\": 6.7,\n        \"vote_count\": 112,\n        \"suggestionScore\": 68\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/rSRA1p4e3laAAJflzdgtqNlx27Y.jpg\",\n        \"genre_ids\": [\n            28\n        ],\n        \"id\": 1049574,\n        \"original_language\": \"en\",\n        \"original_title\": \"Darkness of Man\",\n        \"overview\": \"Russell Hatch, an Interpol operative who takes on the role of father figure to Jayden, the son of an informant killed in a routine raid gone wrong. Years later, Hatch finds himself protecting Jayden and his grandfather from a group of merciless gangs in an all-out turf war, stopping at nothing to protect Jayden and fight anyone getting in his way.\",\n        \"popularity\": 751.033,\n        \"poster_path\": \"/fzmQ7mMYlBE8q459F6x9BAGgmj9.jpg\",\n        \"release_date\": \"2024-05-07\",\n        \"title\": \"Darkness of Man\",\n        \"video\": false,\n        \"vote_average\": 6.5,\n        \"vote_count\": 110,\n        \"suggestionScore\": 65\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/6IrZ3C8qSZ8Tbb32s41ReJOXpI0.jpg\",\n        \"genre_ids\": [\n            12,\n            10751,\n            14,\n            35\n        ],\n        \"id\": 826510,\n        \"original_language\": \"en\",\n        \"original_title\": \"Harold and the Purple Crayon\",\n        \"overview\": \"Inside of his book, adventurous Harold can make anything come to life simply by drawing it. After he grows up and draws himself off the book's pages and into the physical world, Harold finds he has a lot to learn about real life.\",\n        \"popularity\": 742.65,\n        \"poster_path\": \"/dEsuQOZwdaFAVL26RjgjwGl9j7m.jpg\",\n        \"release_date\": \"2024-07-31\",\n        \"title\": \"Harold and the Purple Crayon\",\n        \"video\": false,\n        \"vote_average\": 6.799,\n        \"vote_count\": 92,\n        \"suggestionScore\": 61\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/stKGOm8UyhuLPR9sZLjs5AkmncA.jpg\",\n        \"genre_ids\": [\n            16,\n            10751,\n            12,\n            35\n        ],\n        \"id\": 1022789,\n        \"original_language\": \"en\",\n        \"original_title\": \"Inside Out 2\",\n        \"overview\": \"Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions! Joy, Sadness, Anger, Fear and Disgust, who’ve long been running a successful operation by all accounts, aren’t sure how to feel when Anxiety shows up. And it looks like she’s not alone.\",\n        \"popularity\": 1513.584,\n        \"poster_path\": \"/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg\",\n        \"release_date\": \"2024-06-11\",\n        \"title\": \"Inside Out 2\",\n        \"video\": false,\n        \"vote_average\": 7.678,\n        \"vote_count\": 3330,\n        \"suggestionScore\": 58\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/4ft6TR9wA6bra0RLL6G7JFDQ5t1.jpg\",\n        \"genre_ids\": [\n            28,\n            35\n        ],\n        \"id\": 704239,\n        \"original_language\": \"en\",\n        \"original_title\": \"The Union\",\n        \"overview\": \"A New Jersey construction worker goes from regular guy to aspiring spy when his long-lost high school sweetheart recruits him for an espionage mission.\",\n        \"popularity\": 890.733,\n        \"poster_path\": \"/d9CTnTHip1RbVi2OQbA2LJJQAGI.jpg\",\n        \"release_date\": \"2024-08-15\",\n        \"title\": \"The Union\",\n        \"video\": false,\n        \"vote_average\": 6.251,\n        \"vote_count\": 548,\n        \"suggestionScore\": 55\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/9SSEUrSqhljBMzRe4aBTh17rUaC.jpg\",\n        \"genre_ids\": [\n            27,\n            878\n        ],\n        \"id\": 945961,\n        \"original_language\": \"en\",\n        \"original_title\": \"Alien: Romulus\",\n        \"overview\": \"While scavenging the deep ends of a derelict space station, a group of young space colonizers come face to face with the most terrifying life form in the universe.\",\n        \"popularity\": 782.973,\n        \"poster_path\": \"/b33nnKl1GSFbao4l3fZDDqsMx0F.jpg\",\n        \"release_date\": \"2024-08-13\",\n        \"title\": \"Alien: Romulus\",\n        \"video\": false,\n        \"vote_average\": 7.15,\n        \"vote_count\": 868,\n        \"suggestionScore\": 46\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/lgkPzcOSnTvjeMnuFzozRO5HHw1.jpg\",\n        \"genre_ids\": [\n            16,\n            10751,\n            35,\n            28\n        ],\n        \"id\": 519182,\n        \"original_language\": \"en\",\n        \"original_title\": \"Despicable Me 4\",\n        \"overview\": \"Gru and Lucy and their girls—Margo, Edith and Agnes—welcome a new member to the Gru family, Gru Jr., who is intent on tormenting his dad. Gru also faces a new nemesis in Maxime Le Mal and his femme fatale girlfriend Valentina, forcing the family to go on the run.\",\n        \"popularity\": 1346.005,\n        \"poster_path\": \"/wWba3TaojhK7NdycRhoQpsG0FaH.jpg\",\n        \"release_date\": \"2024-06-20\",\n        \"title\": \"Despicable Me 4\",\n        \"video\": false,\n        \"vote_average\": 7.226,\n        \"vote_count\": 1437,\n        \"suggestionScore\": 41\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/tCQfubckzzcuCbsGugkpLhfjS5z.jpg\",\n        \"genre_ids\": [\n            28,\n            53,\n            80\n        ],\n        \"id\": 970347,\n        \"original_language\": \"en\",\n        \"original_title\": \"The Killer\",\n        \"overview\": \"Zee is a feared contract killer known as \\\"the Queen of the Dead,\\\" but when she refuses to murder a young blind woman, she finds herself hunted both by criminal colleagues and a determined police detective.\",\n        \"popularity\": 831.411,\n        \"poster_path\": \"/6PCnxKZZIVRanWb710pNpYVkCSw.jpg\",\n        \"release_date\": \"2024-08-22\",\n        \"title\": \"The Killer\",\n        \"video\": false,\n        \"vote_average\": 6.476,\n        \"vote_count\": 103,\n        \"suggestionScore\": 28\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/cgKZtNSETjXJPkAQ4rasV7dnyQH.jpg\",\n        \"genre_ids\": [\n            35,\n            27,\n            14,\n            9648\n        ],\n        \"id\": 917496,\n        \"original_language\": \"en\",\n        \"original_title\": \"Beetlejuice Beetlejuice\",\n        \"overview\": \"After a family tragedy, three generations of the Deetz family return home to Winter River. Still haunted by Beetlejuice, Lydia's life is turned upside down when her teenage daughter, Astrid, accidentally opens the portal to the Afterlife.\",\n        \"popularity\": 887.629,\n        \"poster_path\": \"/kKgQzkUCnQmeTPkyIwHly2t6ZFI.jpg\",\n        \"release_date\": \"2024-09-04\",\n        \"title\": \"Beetlejuice Beetlejuice\",\n        \"video\": false,\n        \"vote_average\": 7.183,\n        \"vote_count\": 52,\n        \"suggestionScore\": 27\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/9juRmk8QjcsUcbrevVu5t8VZy5G.jpg\",\n        \"genre_ids\": [\n            28,\n            12,\n            80,\n            53\n        ],\n        \"id\": 923667,\n        \"original_language\": \"cn\",\n        \"original_title\": \"九龍城寨之圍城\",\n        \"overview\": \"Set in the 1980s, troubled youth Chan Lok-kwun accidentally enters the Walled City, discovers the order amidst its chaos, and learns important life lessons along the way. In the Walled City, he becomes close friends with Shin, Twelfth Master and AV. Under the leadership of Cyclone, they resist against the invasion of villain Mr. Big in a series of fierce battles. Together, they vow to protect the safe haven that is Kowloon Walled City.\",\n        \"popularity\": 1608.095,\n        \"poster_path\": \"/PywbVPeIhBFc33QXktnhMaysmL.jpg\",\n        \"release_date\": \"2024-04-23\",\n        \"title\": \"Twilight of the Warriors: Walled In\",\n        \"video\": false,\n        \"vote_average\": 7.2,\n        \"vote_count\": 97,\n        \"suggestionScore\": 14\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/pzFbYJfqGKlGxOsDIIsUi6YxVQ.jpg\",\n        \"genre_ids\": [\n            35,\n            878\n        ],\n        \"id\": 1094138,\n        \"original_language\": \"en\",\n        \"original_title\": \"Jackpot!\",\n        \"overview\": \"In the near future, a 'Grand Lottery' has been established - the catch: kill the winner before sundown to legally claim their multi-billion dollar jackpot. When Katie Kim mistakenly finds herself with the winning ticket, she reluctantly joins forces with amateur lottery protection agent Noel Cassidy who must get her to sundown in exchange for a piece of her prize.\",\n        \"popularity\": 682.012,\n        \"poster_path\": \"/fOsamTFIyGxjw1jLSKdZYxQBJOT.jpg\",\n        \"release_date\": \"2024-08-13\",\n        \"title\": \"Jackpot!\",\n        \"video\": false,\n        \"vote_average\": 6.405,\n        \"vote_count\": 400,\n        \"suggestionScore\": 11\n    }\n]"
+				},
+				{
+					"name": "Succesful keyword search",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies?keyword=deadpool",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "deadpool"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2813"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"afd-zsKNNVC+rbt2uCZOmfKFCHsOuMc\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 17:54:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/sUELHitVw5U0tOJg0x34wY7eTuh.jpg\",\n        \"genre_ids\": [\n            28,\n            35,\n            80\n        ],\n        \"id\": 558144,\n        \"original_language\": \"en\",\n        \"original_title\": \"Deadpool: No Good Deed\",\n        \"overview\": \"Deadpool sees an opportunity to save the day, but it doesn't go entirely as planned.\",\n        \"popularity\": 70.169,\n        \"poster_path\": \"/wlKU9yB0Q8nfPMakBcSBT0JGS7.jpg\",\n        \"release_date\": \"2017-03-03\",\n        \"title\": \"Deadpool: No Good Deed\",\n        \"video\": false,\n        \"vote_average\": 7.144,\n        \"vote_count\": 492,\n        \"suggestionScore\": 78\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/en971MEXui9diirXlogOrPKmsEn.jpg\",\n        \"genre_ids\": [\n            28,\n            12,\n            35\n        ],\n        \"id\": 293660,\n        \"original_language\": \"en\",\n        \"original_title\": \"Deadpool\",\n        \"overview\": \"The origin story of former Special Forces operative turned mercenary Wade Wilson, who, after being subjected to a rogue experiment that leaves him with accelerated healing powers, adopts the alter ego Deadpool. Armed with his new abilities and a dark, twisted sense of humor, Deadpool hunts down the man who nearly destroyed his life.\",\n        \"popularity\": 207.419,\n        \"poster_path\": \"/3E53WEZJqP6aM84D8CckXx4pIHw.jpg\",\n        \"release_date\": \"2016-02-09\",\n        \"title\": \"Deadpool\",\n        \"video\": false,\n        \"vote_average\": 7.621,\n        \"vote_count\": 30664,\n        \"suggestionScore\": 42\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/yDHYTfA3R0jFYba16jBB1ef8oIt.jpg\",\n        \"genre_ids\": [\n            28,\n            35,\n            878\n        ],\n        \"id\": 533535,\n        \"original_language\": \"en\",\n        \"original_title\": \"Deadpool & Wolverine\",\n        \"overview\": \"A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.\",\n        \"popularity\": 3094.232,\n        \"poster_path\": \"/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg\",\n        \"release_date\": \"2024-07-24\",\n        \"title\": \"Deadpool & Wolverine\",\n        \"video\": false,\n        \"vote_average\": 7.75,\n        \"vote_count\": 2646,\n        \"suggestionScore\": 40\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/3P52oz9HPQWxcwHOwxtyrVV1LKi.jpg\",\n        \"genre_ids\": [\n            28,\n            35,\n            12\n        ],\n        \"id\": 383498,\n        \"original_language\": \"en\",\n        \"original_title\": \"Deadpool 2\",\n        \"overview\": \"Wisecracking mercenary Deadpool battles the evil and powerful Cable and other bad guys to save a boy's life.\",\n        \"popularity\": 171.032,\n        \"poster_path\": \"/to0spRl1CMDvyUbOnbb4fTk3VAd.jpg\",\n        \"release_date\": \"2018-05-10\",\n        \"title\": \"Deadpool 2\",\n        \"video\": false,\n        \"vote_average\": 7.492,\n        \"vote_count\": 17658,\n        \"suggestionScore\": 38\n    },\n    {\n        \"adult\": false,\n        \"backdrop_path\": \"/5ZSwZPKgcTJJwhxjbOHeoBTVaKh.jpg\",\n        \"genre_ids\": [\n            35,\n            28,\n            12\n        ],\n        \"id\": 567604,\n        \"original_language\": \"en\",\n        \"original_title\": \"Once Upon a Deadpool\",\n        \"overview\": \"A kidnapped Fred Savage is forced to endure Deadpool's PG-13 rendition of Deadpool 2, as a Princess Bride-esque story that's full of magic, wonder, and zero Fs.\",\n        \"popularity\": 72.132,\n        \"poster_path\": \"/5Ka49BWWyKMXr93YMbH5wLN7aAM.jpg\",\n        \"release_date\": \"2018-12-11\",\n        \"title\": \"Once Upon a Deadpool\",\n        \"video\": false,\n        \"vote_average\": 7.093,\n        \"vote_count\": 756,\n        \"suggestionScore\": 19\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "/movies/favorites",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/movies/favorites",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies",
+						"favorites"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unauthorized access",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies/favorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"favorites"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14-fZxStrVrV0eJrF/UxN4ZRwdDtKU\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 16:18:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Unauthorized access."
+				},
+				{
+					"name": "Empty favorites",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies/favorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"favorites"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 18:11:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[]"
+				},
+				{
+					"name": "Succesful favorites get",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies/favorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"favorites"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "141"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8d-OES6KfcWf1scGi0pR2En2b4rJjQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 18:25:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"movie_id\": 558144,\n        \"addedAt\": \"6/9/2024\",\n        \"suggestionForTodayScore\": 12\n    },\n    {\n        \"movie_id\": 533535,\n        \"addedAt\": \"6/9/2024\",\n        \"suggestionForTodayScore\": 10\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "/movies/favorites",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/movies/favorites",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movies",
+						"favorites"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unauthorized access",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movie_id\" : 29\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies/favorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"favorites"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14-fZxStrVrV0eJrF/UxN4ZRwdDtKU\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 16:18:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Unauthorized access."
+				},
+				{
+					"name": "Movie ID required",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies/favorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"favorites"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14-dkfAl8LXqZ44+UI0xLfm7b3xyvo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 18:18:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Movie ID is required"
+				},
+				{
+					"name": "Movie already in favorites",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movie_id\" : 558144\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies/favorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"favorites"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "26"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a-tqFSGiOzbesZQyS5TsgRfAH7NKY\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 18:14:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Movie already in favorites"
+				},
+				{
+					"name": "Succesful favorite added",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movie_id\" : 533535\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies/favorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"favorites"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "14"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e-biUVBF5uucxTv3ktVrJYlHM1G8Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 Sep 2024 18:20:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Favorite added"
+				}
+			]
+		}
+	]
+}
